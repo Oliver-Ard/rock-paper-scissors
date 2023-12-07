@@ -19,6 +19,26 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-console.log(getComputerChoice());
-
 // Create a function that plays a single round of the game.
+
+function playRound(playerSelection, computerSelection) {
+  // Convert player's input to lowercase for case-insensitive.
+  playerSelection = playerSelection.toLowerCase();
+  // Logic to determine the winner for different choices.
+  if (playerSelection === computerSelection) {
+    return `It's a tie! Both chose:` + playerSelection;
+  } else if (
+    (playerSelection === `rock` && computerSelection === `scissors`) ||
+    (playerSelection === `paper` && computerSelection === `rock`) ||
+    (playerSelection === `scissors` && computerSelection === `paper`)
+  ) {
+    return `You Win! ${playerSelection} beats ${computerSelection}`;
+  } else {
+    return `You lose! ${computerSelection} beats ${playerSelection}`;
+  }
+}
+
+const playerSelection = `scissors`;
+const computerSelection = getComputerChoice();
+
+console.log(playRound(playerSelection, computerSelection));
