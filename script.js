@@ -1,5 +1,7 @@
 // Rock-Paper-Scissors Game in console
-
+//
+//
+//
 //Create a function that generates random rock, paper, scissors words by the computer.
 
 function getComputerChoice() {
@@ -34,11 +36,44 @@ function playRound(playerSelection, computerSelection) {
   ) {
     return `You Win! ${playerSelection} beats ${computerSelection}`;
   } else {
-    return `You lose! ${computerSelection} beats ${playerSelection}`;
+    return `You Lose! ${computerSelection} beats ${playerSelection}`;
   }
 }
 
-const playerSelection = `scissors`;
-const computerSelection = getComputerChoice();
+// Create a function that plays best-of-five game that keeps score and reports a winner or loser at the end.
 
-console.log(playRound(playerSelection, computerSelection));
+function game(rounds) {
+  let playerScore = 0;
+  let computerScore = 0;
+  // Input for the player and display the result of the round
+  const playGame = function () {
+    if (rounds > 0) {
+      const playerChoice = prompt(
+        `Enter your choice (rock, paper or scissors):`
+      );
+      const computerChoice = getComputerChoice();
+      const roundResult = playRound(playerChoice, computerChoice);
+
+      console.log(roundResult);
+      // Logic for how to keep the score
+      if (roundResult.includes(`Win`)) {
+        playerScore++;
+      } else if (roundResult.includes(`Lose`)) {
+        computerScore++;
+      }
+      rounds--;
+      playGame();
+    } else {
+      if (playerScore > computerScore) {
+        console.log(`Congratulations! You win the game!`);
+      } else if (playerScore < computerScore) {
+        console.log(`Sorry! You lose the game.`);
+      } else {
+        console.log(`It's a tie!`);
+      }
+    }
+  };
+  playGame();
+}
+
+game(5);
