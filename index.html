@@ -20,7 +20,7 @@
 		<main>
 			<div class="container">
 				<!-- WELCOME SECTION -->
-				<div class="game-welcome wrapper hidden">
+				<div class="game-welcome wrapper">
 					<h1>
 						Welcome to <br />
 						Rock Paper Scissors!
@@ -29,7 +29,7 @@
 				</div>
 				<!-- INTRO MENU SECTION -->
 				<div class="game-intro-menu wrapper hidden">
-					<p>How many rounds you want to play?</p>
+					<p>How many rounds do you want to play?</p>
 					<div class="game-selections">
 						<button>3</button>
 						<button>5</button>
@@ -38,17 +38,33 @@
 				</div>
 				<!-- PLAY MENU SECTION -->
 				<div class="game-play-menu wrapper hidden">
-					<p>You Win!</p>
+					<h2>You Won!</h2>
+					<p>Paper beats rock</p>
+					<div class="scores-container">
+						<div class="score-box">
+							<div id="player-sign"><i class="fa-solid fa-question"></i></div>
+							<p id="player-score">Player: 0</p>
+						</div>
+						<div class="score-box">
+							<div id="computer-sign"><i class="fa-solid fa-question"></i></div>
+							<p id="computer-score">Computer: 0</p>
+						</div>
+					</div>
+
 					<div class="game-selections">
-						<button><i class="fa-solid fa-hand-back-fist"></i></button>
-						<button><i class="fa-solid fa-hand"></i></button>
-						<button><i class="fa-solid fa-hand-scissors"></i></button>
+						<button id="rock">
+							<i class="fa-solid fa-hand-back-fist"></i>
+						</button>
+						<button id="paper"><i class="fa-solid fa-hand"></i></button>
+						<button id="scissors">
+							<i class="fa-solid fa-hand-scissors"></i>
+						</button>
 					</div>
 				</div>
 				<!-- GAME OVER SECTION -->
 				<div class="game-over wrapper hidden">
-					<p>You Win!</p>
-					<button class="retry">Play Again</button>
+					<p>dsaads</p>
+					<button>Play Again</button>
 				</div>
 			</div>
 		</main>
