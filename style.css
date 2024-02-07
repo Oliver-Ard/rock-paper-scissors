@@ -154,3 +154,27 @@ button:active {
 .dark {
 	color: var(--clr-dark);
 }
+
+/* Media Queries */
+@media only screen and (max-width: 780px) {
+	:root {
+		--font-size-h1: 4rem;
+		--font-size-h2: 3rem;
+		--font-size-p: 2.5rem;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	:root {
+		--font-size-h1: 3.5rem;
+		--font-size-h2: 2.5rem;
+		--font-size-p: 2rem;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	:root {
+		--font-size-h1: 3rem;
+		--font-size-h2: 2.25rem;
+	}
+}
