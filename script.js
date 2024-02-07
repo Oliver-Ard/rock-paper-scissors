@@ -16,7 +16,7 @@ const playerSign = document.querySelector(".player-sign");
 const computerSign = document.querySelector(".computer-sign");
 // Game Over Section
 const gameOverSection = document.querySelector(".game-over");
-const gameOverPara = document.querySelector(".game-over p");
+const gameOverMessage = document.querySelector(".game-over h2");
 const gameOverBtn = document.querySelector(".game-over button");
 
 // ----Game logic----
@@ -163,27 +163,27 @@ function updateScoreMessage(playerSelection, computerSelection) {
 
 function showGameResults() {
 	const textNode = document.createTextNode(" the game!");
-	gameOverPara.textContent = "You ";
+	gameOverMessage.textContent = "You ";
 
 	if (playerScore > computerScore) {
 		const wonSpan = document.createElement("span");
 		wonSpan.classList.add("green");
 		wonSpan.textContent = "won";
-		gameOverPara.appendChild(wonSpan);
-		gameOverPara.appendChild(textNode);
+		gameOverMessage.appendChild(wonSpan);
+		gameOverMessage.appendChild(textNode);
 	} else {
 		const lostSpan = document.createElement("span");
 		lostSpan.classList.add("red");
 		lostSpan.textContent = "lost";
-		gameOverPara.appendChild(lostSpan);
-		gameOverPara.appendChild(textNode);
+		gameOverMessage.appendChild(lostSpan);
+		gameOverMessage.appendChild(textNode);
 	}
 }
 
 function clearUi() {
 	scoreInfo.textContent = "";
 	scoreMessage.textContent = "";
-	gameOverPara.textContent = "";
+	gameOverMessage.textContent = "";
 	// Player UI
 	playerScorePara.textContent = "Player: 0";
 	playerSign.textContent = "";
